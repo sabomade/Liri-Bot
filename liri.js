@@ -262,32 +262,48 @@ const op = process.argv[2];
 
 if(op === "concert-this"){
     //grab & assemble artist/band name
-    //If the user doesn't type an artist/band in, the program will output data for the artist 'Guster'
     var artist = process.argv.splice(3);
+    console.log(artist);
 
-    //need to join movieName and turn it back into a string
-    artist = artist.join().replace(',', '+');
+    //If the user doesn't type an artist/band in, the program will output data for the artist 'Taylor Swift'
+     if (artist.length === 0){
+        artist = 'Taylor+Swift';
+        console.log(artist);
+    } else{
+        //need to join movieName and turn it back into a string
+        artist = artist.join().replace(',', '+');
+        console.log(artist);
+    }
 
     //run findConcert function
     findConcert(artist);
 } else if(op === "spotify-this-song"){
     //grab & assemble song title
-    // If no song is provided, default search/result will be "The Sign" by Ace of Base
     var song = process.argv.splice(3);
 
-    //need to join movieName and turn it back into a string
-    song = song.join(" ");
-    //console.log(song);
+    // If no song is provided, default search/result will be "The Sign" by Ace of Base
+    if (song.length === 0){
+        song = 'the sign';
+    } else{
+        //need to join movieName and turn it back into a string
+        song = song.join(" ");
+    }
 
     //run findSong function
     findSong(song);
 } else if(op === "movie-this"){
     //grab & assemble movie name
-    //If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody.'
     var movieName = process.argv.splice(3);
 
-    //need to join movieName and turn it back into a string
-    movieName = movieName.join().replace(',', '+')
+    //If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody.'
+    if (movieName.length === 0){
+        movieName = 'Mr.+Nobody';
+
+    } else{
+        //need to join movieName and turn it back into a string
+        movieName = movieName.join().replace(',', '+')
+
+    }
 
     //run findMovie function
     findMovie(movieName);
