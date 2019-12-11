@@ -20,3 +20,39 @@ Artist: Taylor Swift
 Venue Name: Z100's Jingle Ball Presented by Capital One 
 Venue Location: New York United States 
 Event Date: 12/13/2019
+
+CONCERT INFO:
+Artist: Taylor Swift 
+Venue Name: Z100's Jingle Ball Presented by Capital One 
+Venue Location: New York United States 
+Event Date: 12/13/2019
+
+CONCERT INFO:
+Artist: Taylor Swift 
+Venue Name: Z100's Jingle Ball Presented by Capital One 
+Venue Location: New York United States 
+Event Date: 12/13/2019
+
+CONCERT INFO:
+Artist: Taylor Swift 
+Venue Name: Capital's Jingle Bell Ball 
+Venue Location: London United Kingdom 
+Event Date: 12/08/2019
+
+CONCERT INFO:
+Artist: Guster 
+Venue Name: Masonic Lodge at Hollywood Forever 
+Venue Location: Los Angeles United States 
+Event Date: 02/27/2020
+
+CONCERT INFO:
+Artist: Red Hot Chili Peppers 
+Venue Name: Gulf Shores Public Beach 
+Venue Location: Gulf Shores United States 
+Event Date: 05/15/2020
+
+CONCERT INFO:
+Artist: Red Hot Chili Peppers 
+Venue Name: Gulf Shores Public Beach 
+Venue Location: Gulf Shores United States 
+Event Date: 05/15/2020

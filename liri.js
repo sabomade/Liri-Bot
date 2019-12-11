@@ -33,56 +33,60 @@ function findConcert(artist){
         //console.log(response.data[0]);
         // print the following info about the given artist/band in the terminal & push to concertInfo
         //next event
-        const event = response.data[0];
-        
-        //artist/band name
-        const performer = event.artist.name;
-        console.log("Artist: "+ performer);
-        concertInfo.push("\nArtist: "+ performer);
+        if (response.data.length === 0){
+            return console.log("Sorry no data could be located for that artist");
+        } else{
+            const event = response.data[0];
+            
+            //artist/band name
+            const performer = event.artist.name;
+            console.log("Artist: "+ performer);
+            concertInfo.push("\nArtist: "+ performer);
 
-        // Name of venue
-        const venueName = event.venue.name;
-        console.log("Venue Name: "+ venueName);
-        concertInfo.push("\nVenue Name: "+ venueName);
-        
-        //Location of Venue
-        const venueLocation = event.venue.city +","+ event.venue.country;
-        console.log("Venue Location: "+ venueLocation);
-        concertInfo.push("\nVenue Location: "+ venueLocation);
-        
-        //Date of Event (formated with moment as MM/DD/YYYY)
-        const eventDate = moment(event.datetime).format("MM/DD/YYYY");
-        console.log("Event Date: "+ eventDate);
-        concertInfo.push("\nEvent Date: "+ eventDate);
+            // Name of venue
+            const venueName = event.venue.name;
+            console.log("Venue Name: "+ venueName);
+            concertInfo.push("\nVenue Name: "+ venueName);
+            
+            //Location of Venue
+            const venueLocation = event.venue.city +","+ event.venue.country;
+            console.log("Venue Location: "+ venueLocation);
+            concertInfo.push("\nVenue Location: "+ venueLocation);
+            
+            //Date of Event (formated with moment as MM/DD/YYYY)
+            const eventDate = moment(event.datetime).format("MM/DD/YYYY");
+            console.log("Event Date: "+ eventDate);
+            concertInfo.push("\nEvent Date: "+ eventDate);
 
-        concertInfo = concertInfo.join().replace(/,/g," ")
+            concertInfo = concertInfo.join().replace(/,/g," ")
 
-        //BONUS: Append the above data to file log.txt
-        fs.appendFileSync("log.txt", "\nCONCERT INFO:"+concertInfo+"\n", "utf8");
-        console.log("-------------------------");
-        console.log("Results Saved to log.txt");
-        console.log("-------------------------");
-    })
-    .catch(function(error) {
-        if (error.response) {
-        // The request was made and the server responded with a status code
-        // that falls out of the range of 2xx
-        console.log("---------------Data---------------");
-        console.log(error.response.data);
-        console.log("---------------Status---------------");
-        console.log(error.response.status);
-        console.log("---------------Status---------------");
-        console.log(error.response.headers);
-        } else if (error.request) {
-        // The request was made but no response was received
-        // `error.request` is an object that comes back with details pertaining to the error that occurred.
-        console.log(error.request);
-        } else {
-        // Something happened in setting up the request that triggered an Error
-        console.log("Error", error.message);
+            //BONUS: Append the above data to file log.txt
+            fs.appendFileSync("log.txt", "\nCONCERT INFO:"+concertInfo+"\n", "utf8");
+            console.log("-------------------------");
+            console.log("Results Saved to log.txt");
+            console.log("-------------------------");
         }
-        console.log(error.config);
-    });
+        })
+        .catch(function(error) {
+            if (error.response) {
+            // The request was made and the server responded with a status code
+            // that falls out of the range of 2xx
+            console.log("---------------Data---------------");
+            console.log(error.response.data);
+            console.log("---------------Status---------------");
+            console.log(error.response.status);
+            console.log("---------------Status---------------");
+            console.log(error.response.headers);
+            } else if (error.request) {
+            // The request was made but no response was received
+            // `error.request` is an object that comes back with details pertaining to the error that occurred.
+            console.log(error.request);
+            } else {
+            // Something happened in setting up the request that triggered an Error
+            console.log("Error", error.message);
+            }
+            console.log(error.config);
+        });
 }
 
 
@@ -263,18 +267,14 @@ const op = process.argv[2];
 if(op === "concert-this"){
     //grab & assemble artist/band name
     var artist = process.argv.splice(3);
-    console.log(artist);
 
     //If the user doesn't type an artist/band in, the program will output data for the artist 'Taylor Swift'
      if (artist.length === 0){
-        artist = 'Taylor+Swift';
-        console.log(artist);
+        artist = 'Taylor Swift';
     } else{
         //need to join movieName and turn it back into a string
-        artist = artist.join().replace(',', '+');
-        console.log(artist);
+        artist = artist.join().replace(/,/g, '%20');
     }
-
     //run findConcert function
     findConcert(artist);
 } else if(op === "spotify-this-song"){
