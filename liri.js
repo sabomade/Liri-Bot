@@ -123,7 +123,7 @@ function findSong(song){
         songInfo.push("\nAlbum: "+ albumName);
 
         //preview link of song
-        const songLink = songResult.preveiw_url;
+        const songLink = songResult.preview_url;
         console.log("Preview Link to Song: "+ songLink);
         songInfo.push("\nPreview Link to Song: "+ songLink);
 
