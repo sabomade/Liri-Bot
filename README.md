@@ -18,8 +18,11 @@ Using the following command line inputs, data is written to terminal & saved to 
 `node liri.js do-what-it-says`
 ![do-what-it-says demo](do-what-it-says.gif)
 
-### How to Use
-
+### How to Run
+This app uses several apis [Spotify, Bands in Town, & OMDB] to create a topic-specific search engine for music, concerts, and movies.  It is empolyed using node in the terminal. To run this search engine: download files, open terminal and navigate to the downloaded folder. Once inside the folder, type the following commands into the terminal to:
+- search for concerts [by a specific musician] `node liri.js concert-this [artist name]`
+- search for a movie by name `node liri.js movie-this [movie title]`
+- search for songs `node liri.js spotify-this-song [song title]`
 
 ## Built With
 * Node.js
