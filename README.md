@@ -35,13 +35,3 @@ This is the only version and is maintained by me, [sabomade](https://github.com/
 
 ## Acknowledgements
 Built & completed as part of the UCB Coding Bootcamp, Homework 10: Node.js
-
-
-### Things to still include:
-- [x] Clearly state the problem the app is trying to solve (i.e. what is it doing and why)
-- [ ] Give a high-level overview of how the app is organized
-- [ ] Give start-to-finish instructions on how to run the app
-- [x] Include screenshots, gifs or videos of the app functioning
-- [ ] Contain a link to a deployed version of the app
-- [x] Clearly list the technologies used in the app
-- [x] State your role in the app development
